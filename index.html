@@ -1,25 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recetas Caseras</title>
-</head>
-<body>
-    <!--inicia barra de navegación-->
-    <header>
-        <div class="logo">
-            <img src="" alt="">
-        </div>
 
-        <nav>
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Acerca de nosotros</a></li>
-            <li><a href="">Recetas</a></li>
-            <li><a href="">Contactos</a></li>
-            <li><a href="">Inicio de Sesión</a></li>
-        </nav>
-    </header>
-    <h1>Bienvenidos al sitio de Recetas</h1>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recetas Caseras</title>
+
+<link rel="stylesheet" href="./CSS/style.css">
+
+</head>
+
+<body data-theme="light">
+
+<!-- Inicia barra de navegación -->
+
+<nav class="navbar">
+
+<div class="navbar-container">
+
+
+<a><img src="./img/logo.png" alt="Logo de Recetas" class="logo-img"></a>
+
+
+<ul class="nav-links">
+
+<li><a href="#">Inicio</a></li>
+
+<li><a href="#">Recetas</a></li>
+
+<li><a href="#">Contacto</a></li>
+
+</ul>
+
+</div>
+<div class="dark-mode-toggle">
+    <button id="darkModeButton">Cambiar a Modo Oscuro</button>
+  </div>
+
+</nav>
+
+<h2>Recetas</h2>
+
+<section class="recetas">
+
+
+
+    <div class="card">
+        <img src="./img/tarta de verdura.webp" alt="Tarta de Verdurass">
+            <h3>Tarta de Verduras</h3>
+            <p>Deliciosa tarta casera con espinaca, calabaza y queso</p>
+    </div>
+
+
+
+    <div class="card">
+        <img src="./img/pizza-casera.webp" alt="Pizza Casera">
+            <h3>Pizza Casera</h3>
+            <p>Con masa esponjosa, salsa de tomate y mucho queso.</p>
+    </div>
+
+    <div class="card">
+        <img src="./img/chanfaina.png" alt="Pizza Casera">
+        <h3>Chanfaina</h3>
+            <p>Con masa esponjosa, salsa de tomate y mucho queso.</p>
+    </div>
+
+
+
+    <div class="card">
+        <img src="./img/sopaipilla.png" alt="Pizza Casera">
+        <h3>Sopaipilla</h3>
+        <p>Con masa esponjosa, salsa de tomate y mucho queso.</p>
+    </div>
+
+
+<div class="card">
+
+<img src="./img/carne a la masa.jpg" alt="Pizza Casera">
+
+<h3>Carne a la masa</h3>
+
+<p>Con masa esponjosa, salsa de tomate y mucho queso.</p>
+
+</div>
+    <div class="card">
+
+    <img src="./img/humita chala.png" alt="Ensalada Fresca">
+
+        <h3>Humita a la Chala</h3>
+
+    <p>Mezcla de hojas verdes, tomates cherry y vinagreta.</p>
+</div>
+</section>
+
+<footer class="footer">
+<p>Recetas de Cocinas - Autor: Gómez Damián</p>
+</footer>
+
+<script>
+    const darkModeButton = document.getElementById('darkModeButton');
+    const body = document.body;
+
+    darkModeButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme); // Guarda la preferencia en el almacenamiento local
+    });
+
+    // Comprueba la preferencia de tema al cargar la página
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      body.setAttribute('data-theme', 'dark');
+    }
+  </script>
+
+</body>
 </body>
 </html>
